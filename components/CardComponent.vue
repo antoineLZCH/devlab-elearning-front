@@ -1,10 +1,10 @@
 <template>
-  <div class="flex justify-center items-center flex-col border-solid border-4 border-gray-600 w-1/3">
+  <div class="flex justify-center items-center flex-col rounded w-1/3">
     <div class="flex-1 flex justify-between w-full">
-      <p class="title p-2">Title</p>
-      <slot name="action"></slot>
+      <p class="p-3 text-center">{{card}}</p>
+      <slot name="action" class="p-3"></slot>
     </div>
-    <div class="flex-1 bg bg-gray-700 w-32 border-solid border-2 border-gray-600 w-auto m-1">
+    <div class="flex-1 w-32 w-auto m-1">
       <slot name="content"></slot>
     </div>
   </div>
@@ -16,10 +16,15 @@ export default {
     return {
       title: "card componement Paul"
     }
+  }, 
+  props: 
+    {card:String}
   }
-}
+
 </script>
 
 <style>
-
+.flex{
+  background: #65b9fc
+}
 </style>
