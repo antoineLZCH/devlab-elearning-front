@@ -1,5 +1,5 @@
 <template>
-  <CardComponent card="titre de la card">
+  <CardComponent card='titre de la card'>
     <div slot="action">
       <p class="p-3">{{action}}</p>
     </div>

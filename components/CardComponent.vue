@@ -10,17 +10,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   head() {
     return {
       title: "card componement Paul"
     }
   }, 
-  props: 
-    {card:String}
-  }
-
+  props: {
+    card: String
+  },
+}
 </script>
 
 <style>
