@@ -6,10 +6,14 @@
         <img src="../assets/folder.svg" alt="icon_folder"> 
       </div>
     </CardComponent>
-    <MenuBoutonComponent class="mt-3" rounded="true" color="#65b9fc">
-        <span slot="icon">
+    <MenuBoutonComponent chemin="profil" class="mt-3" rounded="true" color="#65b9fc">
+        <template slot="icon">
           <img src="../assets/home.svg">
-        </span>
+        </template>
+        <template slot="title" color="#65b9fc">
+          {{redirection}}
+        </template>
+
     </MenuBoutonComponent>
  </div>
 
@@ -30,6 +34,7 @@ export default {
   data() {
     return {
       action: 'dynamique action',
+      redirection: 'Profil',
       icon: 'button'
     }
   },

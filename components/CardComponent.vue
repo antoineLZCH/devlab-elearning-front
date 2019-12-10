@@ -24,7 +24,5 @@ export default {
 </script>
 
 <style>
-.flex{
-  background: #65b9fc
-}
+
 </style>
