@@ -1,17 +1,17 @@
 <template>
-  <CardComponent card='titre de la card'>
-    <div slot="action" class="flex">
-      <span :style="{color:tqt}" class="p-3">{{action}}</span>
-    </div>
-    <div slot="content">
-      <img src="../assets/folder.svg" alt="icon_folder"> 
-    <MenuBoutonComponent>
-        <span slot="icon">{{icon}}</span>
+ <div>
+    <CardComponent card='titre de la card'>
+        <span  slot="action" class="p-3">{{action}}</span>
+      <div slot="content">
+        <img src="../assets/folder.svg" alt="icon_folder"> 
+      </div>
+    </CardComponent>
+    <MenuBoutonComponent class="mt-3" rounded="true" color="#65b9fc">
+        <span slot="icon">
+          <img src="../assets/home.svg">
+        </span>
     </MenuBoutonComponent>
-    </div>
-    <br>
-    
-  </CardComponent>
+ </div>
 
 </template>
 
@@ -24,10 +24,12 @@ export default {
     CardComponent,
     MenuBoutonComponent
   },
+  props: {
+    
+  },
   data() {
     return {
       action: 'dynamique action',
-      rounded: true,
       icon: 'button'
     }
   },
@@ -37,4 +39,10 @@ export default {
 
 <style>
 
+.rounded{
+    border-radius: 20px
+}
+.flex{
+  background: #65b9fc
+}
 </style>

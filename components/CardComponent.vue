@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-center items-center flex-col rounded w-1/3">
-    <div class="flex-1 flex justify-between w-full">
+  <div class="flex justify-center items-center flex-col rounded w-1/3 mt-3">
+    <div class="flex-1 flex justify-between w-full rounded">
       <p class="p-3 text-center">{{card}}</p>
       <slot name="action" class="p-3"></slot>
     </div>
