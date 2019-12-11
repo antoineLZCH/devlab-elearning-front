@@ -1,17 +1,30 @@
 <template>
-    <h1>Profil</h1>
+    <div>
+        <h1>Profil</h1>
+        <MenuBoutonComponent chemin="../" color="pink" rounded="false">
+            <template slot="icon">
+                <img src="../../assets/folder.svg">
+            </template>
+            <template slot="title" color="pink">
+                {{redirection}}
+            </template>
+        </MenuBoutonComponent>
+    </div>
 </template>
 
 <script>
-// import CardComponent from '~/components/CardComponent.vue'
-// import MenuBoutonComponent from '~/components/MenuBoutonComponent.vue'
+ import MenuBoutonComponent from '~/components/MenuBoutonComponent.vue'
 
 export default {
-//   components: {
-//     CardComponent,
-//     MenuBoutonComponent
-//   },
+  components: {
+    MenuBoutonComponent
+  },
+    data() {
+        return {
+            redirection:'lessons',
 
+        }
+    },
 }
 </script>
 

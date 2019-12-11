@@ -26,11 +26,12 @@ export default {
         color:{color:String, default: '#fff'},
         icon:String,
         redirection:String,
-        chemin:String
+        chemin:String,
+        hoverIn()
     },
     data() {
         return{
-            visible: true
+            visible: false
         }
     },
     methods: {
@@ -52,11 +53,11 @@ export default {
     z-index: 1;
     transition: 0.1s
 }
-.slide-enter-active  {
+.slide-enter-active, .slide-leave-active {
     transition: opacity 1s;
 }
-.slide-enter{
-    /* transform:translateX(-10px); */
+.slide-enter, .slide-leave-active{
     opacity: 0;
 }
+
 </style>
