@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <Card/>
+    <h1>Welcome</h1>
+    <nuxt-link to="courses">Cours</nuxt-link>
   </div>
 </template>
 
 <script lang="ts">
   import Vue from 'vue';
-  import Card from '@/components/CardComponent.vue';
   
   export default Vue.extend({
-    components: {Card}
+
   })
 </script>
 
