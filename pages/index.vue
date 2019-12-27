@@ -1,13 +1,21 @@
 <template>
-  <h2>Hello There</h2>
+
+    <Card post="Up2You"></Card>
+
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-export default {
-  components: {
-    Logo
+<script type="text/javascript">
+  import Card from '../components/Card'
+  export default {
+    components: {
+      Card
+    }
   }
-}
+
+
 </script>
+
+
+
+
 
