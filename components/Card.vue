@@ -1,24 +1,30 @@
 <template>
 
-  <div id="container .text-lg">
-    <h1>{{ post }}</h1>
+  <div class="uppercase text-left font-bold text-4xl italic text-red-800 m-5">
+    {{ title }}
   </div>
+
+
 
 </template>
 
 <script type="text/javascript">
   export default {
     name: 'Card',
-    props : ['post']
+    props : ['title']
   }
 </script>
 
-<style scoped>
+<style>
 
-  h1 {
-    text-align: center;
-    font-size: 42px;
+
+  body {
+    background-color: #19161F;
   }
+
+
+
+
 
 
 

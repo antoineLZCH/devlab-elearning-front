@@ -1,6 +1,6 @@
 <template>
 
-    <Card post="Up2You"></Card>
+    <Card title="Up2You"></Card>
 
 </template>
 
