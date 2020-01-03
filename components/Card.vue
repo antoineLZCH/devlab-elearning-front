@@ -3,15 +3,13 @@
   <div class="uppercase text-left font-bold text-4xl italic text-red-800 m-5">
     {{ title }}
   </div>
-
-
-
 </template>
 
 <script type="text/javascript">
   export default {
-    name: 'Card',
+    name: 'CardComponent',
     props : ['title']
+
   }
 </script>
 

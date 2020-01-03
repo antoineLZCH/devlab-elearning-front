@@ -1,14 +1,23 @@
 <template>
 
-    <Card title="Up2You"></Card>
+    <CardComponent title="Up2You"></CardComponent>
+    <actionComponent></actionComponent>
+
 
 </template>
 
+
+
+
+
+
 <script type="text/javascript">
-  import Card from '../components/Card'
+  import CardComponent from '../components/Card'
+  import actionComponent from  '../components/action'
   export default {
     components: {
-      Card
+      CardComponent,
+      actionComponent
     }
   }
 
