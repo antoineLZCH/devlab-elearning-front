@@ -1,17 +1,22 @@
 <template>
 
-  <a
-    v-bind:href="url"
-    class="nav-link"
-  >
-    <slot></slot>
-  </a>
+  <div class="w-14 m-5" @click="handleClick">
+      <slot></slot>
+
+  </div>
+
 
 </template>
 
 <script>
   export default {
-    name: 'actionComponent'
+    name: 'actionComponent',
+    methods : {
+      handleClick : function() {
+        alert('Clicked Me ! ')
+
+      }
+    }
   }
 </script>
 
