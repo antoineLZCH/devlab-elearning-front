@@ -3,7 +3,9 @@
     <Navbar/>
     <div id="main" class="pt-16">
       <Aside/>
-      <nuxt/>
+      <div id="Content">
+        <nuxt/>
+      </div>
     </div>
   </div>
 </template>
@@ -19,3 +21,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+  #Content{
+    margin: 15px 80px 0px;
+  }
+</style>
