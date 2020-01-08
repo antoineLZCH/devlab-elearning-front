@@ -1,15 +1,15 @@
 <template>
-  <div class="flex flex-row pt-6 items-center justify-around">
+  <div class="flex flex-col pt-6 items-center justify-around">
     <div class="max-w-sm">
         <img src="../assets/logo.png">
     </div>
     
     <connexion
-    action=""
-    pwdLink=""
+    action="#"
+    pwdLink="#"
     >
       <template slot="title">
-        <h3 class="text-4xl text-center">Connexion</h3>
+        <h3 class="text-4xl font-medium text-center">Connexion</h3>
       </template>
     </connexion>
 
@@ -20,12 +20,12 @@
 import Vue, {PropOptions} from 'vue';
 
 import connexion from '~/components/connexion.vue'
-import fields from '~/components/fields.vue'
+
 
 export default {
   components: {
-    connexion,
-    fields
+    connexion
+
   },
   props: {
   },
