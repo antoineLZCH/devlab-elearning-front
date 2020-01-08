@@ -19,9 +19,14 @@ export default {
     }
   }, 
   props: {
-    card: String
+    card:String 
+  },
+  data() {
+    return {
+    }
   },
 }
+
 </script>
 
 <style>
