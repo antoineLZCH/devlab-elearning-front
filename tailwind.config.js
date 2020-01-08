@@ -5,7 +5,15 @@
 ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
 module.exports = {
-  theme: {},
-  variants: {},
+  theme: {
+    extends: {
+      colors: {
+      uptoblue: '82d3de'
+    }
+    }
+  },
+  variants: {
+    
+  },
   plugins: []
 }

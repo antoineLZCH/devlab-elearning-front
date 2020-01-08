@@ -11,7 +11,8 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from 'vue'
+export default Vue.extend({
   name:'formulaire', 
   props: {
     label:String,
@@ -22,7 +23,7 @@ export default {
     return {
     }
   },
-}
+})
 
 </script>
 
