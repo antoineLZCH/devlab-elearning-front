@@ -16,7 +16,8 @@
  </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue, {PropOptions} from 'vue';
 
 import connexion from '~/components/connexion.vue'
 import fields from '~/components/fields.vue'
