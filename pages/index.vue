@@ -6,7 +6,7 @@
     pwdLink="#"
     >
       <template slot="title">
-        <h3 class="text-4xl font-semibold text-center text-uptoblue">Connexion à Up2You</h3>
+        <h1 class="text-4xl font-semibold text-center text-uptoblue">Connexion à Up2You</h1>
       </template>
     </connexion>
     <!-- <nuxt-link to="lecons">LECONS</nuxt-link> -->
