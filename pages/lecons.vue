@@ -1,8 +1,5 @@
 <template>
 
-      <mainNav>
-          
-      </mainNav>
 </template>
 
 <script lang="ts">
