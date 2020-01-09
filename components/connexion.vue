@@ -53,7 +53,7 @@
               </div>
             </form>
             <div class="bg-uptoblue w-4/12 h-auto flex justify-around items-center flex-col text-center text-white">
-              <div class="">
+              <div>
                 <h2 class="font-semibold text-4xl pb-6">Bon retour parmi nous !</h2>
                 <p class="p-3">Pour rester connecté veuillez 
                   entrer vos informations personnelles</p>

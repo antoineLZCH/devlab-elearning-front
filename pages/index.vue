@@ -2,8 +2,8 @@
   <div class="flex flex-col items-center justify-around">
     
     <connexion
-    action="#"
-    pwdLink="#"
+    action="admin/"
+    pwdLink="admin/"
     >
       <template slot="title">
         <h1 class="text-4xl font-semibold text-center text-uptoblue">Connexion à Up2You</h1>
