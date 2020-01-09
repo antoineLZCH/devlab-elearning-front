@@ -1,35 +1,39 @@
 <template>
+  <div class="flex flex-col items-center justify-around">
 
-  <div>
-    <CardComponent title="Up2You"></CardComponent>
-    <actionComponent><img alt=user src="account_circle-24px.svg"></actionComponent>
+    <connexion
+    action="#"
+    pwdLink="#"
+    >
+      <template slot="title">
+        <h1 class="text-4xl font-semibold text-center text-uptoblue">Connexion à Up2You</h1>
+      </template>
+    </connexion>
 
-
-  </div>
-
-
-
+ </div>
 </template>
 
+<script lang="ts">
+
+import connexion from '~/components/connexion.vue'
 
 
+export default {
+  components: {
+    connexion
 
+  },
+  props: {
+  },
+  data() {
+    return {
 
-
-<script type="text/javascript">
-  import CardComponent from '../components/Card'
-  import actionComponent from '../components/action'
-  export default {
-    components: {
-      CardComponent,
-      actionComponent
     }
-  }
-
+  },
+}
 
 </script>
 
+<style>
 
-
-
-
+</style>
