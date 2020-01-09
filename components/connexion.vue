@@ -10,11 +10,13 @@
               label="UserName"
               type="text"
               name="identifiant"
+              placeholder="Identifiant"
               ></fields>
               <fields
               label="PassWord"
               type="password"
-              name="pwd"></fields>
+              name="pwd"
+              placeholder="Mot de passe"></fields>
             <div class=" flex justify-between mb-6 flex-row items-center" >
                 <input class="shadow bg-uptoblue border-1 border-uptoblue hover:bg-transparent hover:text-uptoblue focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer" type="submit" value="Connect">
                 

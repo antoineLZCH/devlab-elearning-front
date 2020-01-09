@@ -12,12 +12,11 @@
         <h3 class="text-4xl font-medium text-center">Connexion</h3>
       </template>
     </connexion>
-
+    <!-- <nuxt-link to="lecons">LECONS</nuxt-link> -->
  </div>
 </template>
 
 <script lang="ts">
-import Vue, {PropOptions} from 'vue';
 
 import connexion from '~/components/connexion.vue'
 
