@@ -56,7 +56,7 @@
             <div class="flex flex-col mb-6 flex-row items-center forgot" >
 
               <span class="bg-uptoblack w-56"></span>
-              <input class="shadow bg-uptoblue border-1 border-uptoblue hover:bg-transparent hover:text-uptoblue focus:shadow-outline focus:outline-none text-white font-bold py-2 px-5 rounded-full cursor-pointer" type="submit" value="Connect">
+              <nuxt-link to="/admin" class="shadow bg-uptoblue border-1 border-white hover:bg-transparent hover:bg-white hover:text-uptoblue  focus:outline-none text-white font-bold py-2 px-5 rounded-full cursor-pointer">Connect</nuxt-link>
             </div>
           </div>
         </form>
@@ -83,11 +83,8 @@
 </template>
 
 <script>
-
   import fields from '~/components/fields.vue'
   import register from '~/components/register.vue'
-
-
   export default {
     components: {
       fields,
@@ -103,11 +100,9 @@
     },
     data() {
       return {
-
       }
     },
   }
-
 </script>
 
 <style>

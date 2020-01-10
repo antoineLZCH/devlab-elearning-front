@@ -1,10 +1,9 @@
 <template>
-
   <div class="flex flex-col items-center justify-around">
-
+    
     <connexion
-    action="admin/"
-    pwdLink="admin/"
+    action="#"
+    pwdLink="#"
     >
       <template slot="title">
         <h1 class="text-4xl font-semibold text-center text-uptoblue">Connexion à Up2You</h1>
@@ -14,41 +13,27 @@
  </div>
 </template>
 
-<script>
+<script lang="ts">
 
 import connexion from '~/components/connexion.vue'
-import register from '../components/register'
 
 
 export default {
   components: {
-    connexion,
-    register
+    connexion
 
   },
   props: {
   },
   data() {
     return {
-
+ 
     }
   },
 }
-
-
 
 </script>
 
 <style>
 
 </style>
-
-  <div class="container">
-    <h1>Welcome</h1>
-    <nuxt-link to="courses">Cours</nuxt-link>
-  </div>
-
-
-
-
-

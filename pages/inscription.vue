@@ -16,25 +16,19 @@
 
 
 <script>
-
   import register from '~/components/register.vue'
-
   export default {
     components: {
       register
-
     },
     props: {
     },
     data() {
       return {
-
       }
     },
   }
-
 </script>
 
 <style scoped>
-
 </style>
