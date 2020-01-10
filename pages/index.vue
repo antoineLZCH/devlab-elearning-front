@@ -6,7 +6,7 @@
     pwdLink="admin/"
     >
       <template slot="title">
-        <h1 class="text-4xl font-semibold text-center text-uptoblue">Connexion à Up2You</h1>
+        <h1 class="text-4xl font-semibold text-center text-uptoblue">Connexion � Up2You</h1>
       </template>
     </connexion>
     <!-- <nuxt-link to="lecons">LECONS</nuxt-link> -->
@@ -14,11 +14,9 @@
 </template>
 
 <script lang="ts">
-
-import connexion from '~/components/connexion.vue'
-
-
-export default {
+  import Vue from 'vue';
+  import connexion from '~/components/connexion.vue';
+  export default Vue.extend({
   components: {
     connexion
 
@@ -30,10 +28,7 @@ export default {
  
     }
   },
-}
+  })
 
 </script>
 
-<style>
-
-</style>
