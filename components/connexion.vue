@@ -48,23 +48,22 @@
                         Forgot Password ?
                     </a>
                     <span class="bg-uptoblack w-56"></span>
-                    <input class="shadow bg-uptoblue border-1 border-uptoblue hover:bg-transparent hover:text-uptoblue focus:shadow-outline focus:outline-none text-white font-bold py-2 px-5 rounded-full cursor-pointer" type="submit" value="Connect">         
-                </div>    
+                    <input class="shadow bg-uptoblue border-1 border-uptoblue hover:bg-transparent hover:text-uptoblue focus:shadow-outline focus:outline-none text-white font-bold py-2 px-5 rounded-full cursor-pointer" type="submit" value="Connect">
+                </div>
               </div>
             </form>
             <div class="bg-uptoblue w-4/12 h-auto flex justify-around items-center flex-col text-center text-white">
               <div class="">
                 <h2 class="font-semibold text-4xl pb-6">Bon retour parmi nous !</h2>
-                <p class="p-3">Pour rester connecté veuillez 
+                <p class="p-3">Pour rester connecté veuillez
                   entrer vos informations personnelles</p>
               </div>
               <div class="">
                 <p class="p-2">Pas de compte ?</p>
-                <button class="shadow bg-uptoblue border-1 border-white hover:bg-transparent hover:bg-white hover:text-uptoblue  focus:outline-none text-white font-bold py-2 px-5 rounded-full cursor-pointer"> S'inscrire 
+                <nuxt-link to="/inscription" class="shadow bg-uptoblue border-1 border-white hover:bg-transparent hover:bg-white hover:text-uptoblue  focus:outline-none text-white font-bold py-2 px-5 rounded-full cursor-pointer">S'inscrire</nuxt-link>
 
-                </button>
               </div>
-                
+
             </div>
         </div>
     </div>
@@ -91,7 +90,7 @@ export default {
   },
   data() {
     return {
-    
+
     }
   },
 }

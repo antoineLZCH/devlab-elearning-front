@@ -5,7 +5,7 @@
       <div class="w-24 absolute top-0 left-0 right-o flex justify-start items-center p-5">
         <img src="../assets/logo.png">
       </div>
-      <div class="flex flex-row">
+      <div class="flex flex-row-reverse">
         <form method="POST" :action="action"  class="w-8/12 p-5">
           <div class="flex justify-center items-center flex-col p-6">
             <slot name="title"></slot>
@@ -60,17 +60,19 @@
             </div>
           </div>
         </form>
+
         <div class="bg-uptoblue w-4/12 h-auto flex justify-around items-center flex-col text-center text-white">
           <div class="">
             <h2 class="font-semibold text-4xl pb-6">Bienvenue</h2>
-            <p class="p-3">Entrer vos infos personnelles et
+            <p class="p-3 font-bold">Entrer vos infos personnelles et
               commencer à apprendre dès maintenant !</p>
           </div>
           <div class="">
-            <p class="p-2">Déjà un compte ?</p>
-            <button class="shadow bg-uptoblue border-1 border-white hover:bg-transparent hover:bg-white hover:text-uptoblue  focus:outline-none text-white font-bold py-2 px-5 rounded-full cursor-pointer"> Connexion
+            <p class="p-2 font-bold">Déjà un compte ?</p>
+            <nuxt-link to="/" class="shadow bg-uptoblue border-1 border-white hover:bg-transparent hover:bg-white hover:text-uptoblue  focus:outline-none text-white font-bold py-2 px-5 rounded-full cursor-pointer">Connexion</nuxt-link>
 
-            </button>
+
+
           </div>
 
         </div>

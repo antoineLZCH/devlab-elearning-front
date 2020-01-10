@@ -6,7 +6,7 @@
       pwdLink="#"
     >
       <template slot="title">
-        <h1 class="text-4xl font-semibold text-center text-uptoblue">Bienvenue !</h1>
+        <h1 class="text-4xl font-semibold text-center text-uptoblue">Création d'un compte</h1>
       </template>
     </register>
 
