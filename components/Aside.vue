@@ -19,8 +19,8 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="h-6 w-6 text-grey-darker fill-current xl:mr-2"><path d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z" class="heroicon-ui"></path></svg>
                 <div class="text-xs">Admin</div>
               </div>
-                <div  @click.stop v-show="isHidden" class="absolute xl:relative pin-t left-full xl:pin-none w-48 xl:w-auto group-hover:block bg-gray-800 z-50 xl:z-auto">
-                    <nuxt-link to="/admin/users" class="block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white hover:bg-gray-900 text-xs flex justify-center items-center">
+                <div  @click.stop v-show="isHidden" class="absolute xl:relative pin-t xl:pin-none w-32 xl:w-auto group-hover:block bg-gray-800 z-50 xl:z-auto">
+                    <nuxt-link to="/admin/users" class="block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white hover:bg-gray-900 text-xs flex justify-center items-start">
                       Utilisateurs
                     </nuxt-link>
                     <nuxt-link to="/admin/formation" class="block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white hover:bg-gray-900 text-xs">

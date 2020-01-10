@@ -21,7 +21,7 @@
             <div class="flex items-center h-full">
                 <a href="#" class="flex items-center text-white h-full px-4">Notifs</a>
                 <div @click="isHidden = !isHidden" class="group relative h-full w-32">
-                    <a href="#" class="text-white flex items-center h-full bg-grey-darkest px-4">
+                    <a href="#" class="text-white flex items-center h-full bg-grey-darkest px-4 w-20">
                       <img 
                       src="~/assets/img/avatar_test.jpeg" 
                       alt="users profile picture"
