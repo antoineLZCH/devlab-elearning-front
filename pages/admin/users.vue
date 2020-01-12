@@ -1,17 +1,15 @@
 <template>
-
  <div>
    <div class="font-sans antialiased h-screen">
       <Navbar/>
       <div id="main" class="pt-16">
         <Aside/>
         <div id="Content">    
-              <Users>
-                <div>
-                  <h1>Liste des utilisateurs</h1>
-                  <a class="Add-stylus" href="">New User</a>
+                <div  class="h-32">
+                  <h1 class="text-4xl font-semibold p-5">Liste des utilisateurs</h1>
+                  <a class="Add-stylus m-5" href="">New User</a>
                 </div>
-              <table class="table">
+              <table class="table p-5">
                 <thead>
                   <tr>
                     <th scope="col">Nom Prénom</th>
@@ -35,24 +33,36 @@
                   </tr>
                 </tbody>
               </table>
-              <p>
-              <button @click="prevPage">Previous</button> 
-              <button @click="nextPage">Next</button>
-              </p>
-              </Users>
+              <div class="flex justify-between items-center">
+              <button>Previous</button> 
+              <button>Next</button>
+              </div>
         </div>
       </div>
     </div>
- 
  </div>
 </template>
 
 
-<script lang="ts">
+<script>
 import Vue, {PropOptions} from 'vue';
-// import Navbar from '~/components/Navbar'
-// import Aside from '~/components/Aside'
+import Navbar from '~/components/Navbar'
+import Aside from '~/components/Aside'
 
+export default Vue.extend({
+  components: {
+    Navbar, 
+    Aside
+  },
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+  
+  }
+})
 </script>
 
 <style lang="scss">
@@ -66,6 +76,7 @@ import Vue, {PropOptions} from 'vue';
   
   table{
     width: 100%;
+    padding: 20px
   }
   tbody{
     & tr{
