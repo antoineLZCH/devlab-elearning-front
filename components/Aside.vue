@@ -20,10 +20,10 @@
                 <div class="text-xs">Admin</div>
               </div>
                 <div  @click.stop v-show="isHidden" class="absolute xl:relative pin-t left-full xl:pin-none w-48 xl:w-auto group-hover:block bg-gray-800 z-50 xl:z-auto">
-                    <nuxt-link to="/admin/users" class="block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white hover:bg-gray-900 text-xs">
+                    <nuxt-link to="/admin/user/list" class="block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white hover:bg-gray-900 text-xs">
                       Utilisateurs
                     </nuxt-link>
-                    <nuxt-link to="/admin/formation" class="block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white hover:bg-gray-900 text-xs">
+                    <nuxt-link to="/admin/formation/formations" class="block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white hover:bg-gray-900 text-xs">
                       Gestion Formations
                     </nuxt-link>
                 </div>
