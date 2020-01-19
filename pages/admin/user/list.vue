@@ -17,33 +17,57 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><img src="" alt="">Olzack Henry</td>
-        <td>2</td>
-        <td>1</td>
-        <td>29</td>
-        <td><button class="mainbutton">Voir</button> | <button class="deletebutton">Delete</button></td>
-      </tr>
-      <tr>
-        <td><img src="" alt=""> Mozavick Patrick</td>
-        <td>4</td>
-        <td>1</td>
-        <td>19</td>
+      <tr v-for="users in pageOfItems" :key="users.id">
+        <td><img src="" alt="">{{ users.first_name }}</td>
+        <td>{{ users.team }}</td>
+        <td>{{ users.level }}</td>
+        <td>{{ users.formation_nbr }}</td>
         <td><button class="mainbutton">Voir</button> | <button class="deletebutton">Delete</button></td>
       </tr>
     </tbody>
   </table>
 
-  <p>
-  <button >Previous</button> 
-  <button >Next</button>
-  </p>
-</section>
+    <div class="card-footer pb-0 pt-3"><jw-pagination :items="users" @changePage="onChangePage"></jw-pagination></div>
+   
+  </section>
 </template>
 
-
 <script lang="ts">
+import Vue from 'vue'
+import JwPagination from 'jw-vue-pagination';
 
+Vue.component('jw-pagination', JwPagination);
+
+export default {
+    data() {
+        return {
+            pageOfItems: [],
+            users: [
+          { id: 1, first_name: 'Fred Flintstone', team: '3', level: '2', formation_nbr: '5' },
+          { id: 2, first_name: 'Wilma Flintstone', team: '3', level: '2', formation_nbr: '5' },
+          { id: 3, first_name: 'Barney Rubble', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 4, first_name: 'Betty Rubble', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 5, first_name: 'Pebbles Flintstone', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 6, first_name: 'Bamm Bamm Rubble', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 7, first_name: 'The Great Gazzoo', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 8, first_name: 'Rockhead Slate', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 9, first_name: 'Pearl Slaghoople', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 10, first_name: 'Pearl Slaghoople', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 11, first_name: 'Pearl Slaghoople', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 12, first_name: 'Pearl Slaghoople', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 13, first_name: 'Pearl Slaghoople', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 14, first_name: 'Pearl Slaghoople', team: '3', level: '2', formation_nbr: '5'  },
+          { id: 15, first_name: 'Pearl Slaghoople', team: '3', level: '2', formation_nbr: '5'  },
+        ]
+        };
+    },
+    methods: {
+        onChangePage(pageOfItems) {
+            // update page of items
+            this.pageOfItems = pageOfItems;
+        }
+    }
+};
 </script>
 
 <style lang="scss">
