@@ -93,7 +93,7 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style scoped>
 #main {
   display: grid;
   grid-template-columns: 6rem auto;
