@@ -1,9 +1,9 @@
 <template>
-  <div class="font-sans antialiased h-screen">
+  <div class="bg-gray-700 font-sans leading-normal tracking-normal mt-12 sized_top">
     <Navbar/>
-    <div id="main" class="pt-16">
+    <div class="flex flex-col md:flex-row bg-gray-300">
       <Aside/>
-      <div id="Content">
+      <div id="Content" class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
         <nuxt/>
       </div>
     </div>
@@ -24,6 +24,16 @@ export default {
 
 <style lang="scss">
   #Content{
-    margin: 15px 80px 0px;
+    padding: 15px 80px 0px;
+  }
+
+  @media only screen and (max-width: 770px){
+    #Content{
+      margin-bottom: 55px;
+      padding: 15px 22px 0px;
+    }
+    .sized_top.mt-12{
+      margin-top: 13px;
+    }
   }
 </style>

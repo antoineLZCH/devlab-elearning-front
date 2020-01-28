@@ -1,35 +1,42 @@
 <template>
   <aside>
-        <div class="bg-gray-300 fixed w-48 h-full min-h-screen">
-          <div class="xl:py-2">
-            <div class="group relative sidebar-item with-children">
-              <nuxt-link to="/" class="block xl:flex xl:items-center text-center xl:text-left shadow-light xl:shadow-none py-6 xl:py-2 xl:px-4 border-l-4 border-transparent hover:bg-gray-700 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="h-6 w-6 text-grey-darker fill-current xl:mr-2"><path d="M12 18.62l-6.55 3.27A1 1 0 0 1 4 21V4c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v17a1 1 0 0 1-1.45.9L12 18.61zM18 4H6v15.38l5.55-2.77a1 1 0 0 1 .9 0L18 19.38V4z" class="heroicon-ui"></path></svg>
-                <div class="text-xs">Accueil</div>
-              </nuxt-link>
-            </div>         
-            <div class="group relative sidebar-item with-children">
-              <nuxt-link to="/formation" class="block xl:flex xl:items-center text-center xl:text-left shadow-light xl:shadow-none py-6 xl:py-2 xl:px-4 border-l-4 border-transparent hover:bg-gray-700 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="h-6 w-6 text-grey-darker fill-current xl:mr-2"><path d="M20 11.46V20a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2v-4h-2v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8.54A4 4 0 0 1 2 8V7a1 1 0 0 1 .1-.45l2-4A1 1 0 0 1 5 2h14a1 1 0 0 1 .9.55l2 4c.06.14.1.3.1.45v1a4 4 0 0 1-2 3.46zM18 12c-1.2 0-2.27-.52-3-1.35a3.99 3.99 0 0 1-6 0A3.99 3.99 0 0 1 6 12v8h3v-4c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v4h3v-8zm2-4h-4a2 2 0 1 0 4 0zm-6 0h-4a2 2 0 1 0 4 0zM8 8H4a2 2 0 1 0 4 0zm11.38-2l-1-2H5.62l-1 2h14.76z" class="heroicon-ui"></path></svg>           
-                <div class="text-xs">Formation</div>
-              </nuxt-link>
+        <div class="bg-gray-300 h-9 fixed bottom-0 mt-12 md:relative md:h-screen w-full md:w-48">
+              <button v-if="isHidden" @click="isHidden = false" tabindex="-1" class="fixed inset-0 h-full w-full cursor-default"></button>
+
+            <div class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
+                <ul class=" z-10 list-reset flex flex-row md:flex-col py-0 md:py-3 text-center md:text-left">
+                    <li class="flex-1 group">
+                        <nuxt-link to="/" class="block py-1 md:py-3 pl-1 align-middle no-underline hover:bg-gray-700">
+                          <font-awesome-icon :icon="['fas', 'home']" class="text-gray-700 xl:mr-2 group-hover:text-white" />
+                          <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-800 md:text-gray-800 group-hover:text-white block md:inline-block">Accueil</span>
+                        </nuxt-link>
+                    </li>
+                    <li class="flex-1 group">
+                      <nuxt-link to="/formation" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle  no-underline hover:bg-gray-700">
+                          <font-awesome-icon :icon="['fas', 'book']" class="text-gray-700 group-hover:text-white xl:mr-2"/>
+                         <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-800 md:text-gray-800 group-hover:text-white block md:inline-block">Formation</span>
+                      </nuxt-link>
+                    </li>
+                    <ul class="flex-1 z-10 group" @click="isHidden = !isHidden">
+                      <li>
+                        <div class="block py-1 md:py-3 pl-1 align-middle group-hover:bg-gray-700 no-underline">
+                          <font-awesome-icon :icon="['fas', 'user']" class="text-gray-700 xl:mr-2 group-hover:bg-gray-700 group-hover:text-white" />
+                            <span class="pb-1 md:pb-0 text-xs md:text-base text-gray-800 group-hover:text-white md:text-gray-800 md:text-white block md:inline-block">Admin</span>
+                        </div>
+                      </li> 
+                      <li class="children_side" v-show="isHidden">
+                        <nuxt-link to="/admin/user/list" class="child_side block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white bg-gray-600 text-xs hover:bg-gray-800">
+                          Utilisateurs
+                        </nuxt-link>
+                        <nuxt-link to="/admin/formation/formations" class="child_side block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white bg-gray-600 text-xs hover:bg-gray-800">
+                          Gestion Formations
+                        </nuxt-link>
+                      </li>
+                    </ul>
+                </ul>
             </div>
-            <div @click="isHidden = !isHidden" class="group relative sidebar-item with-children">
-              <div class="block xl:flex xl:items-center text-center xl:text-left shadow-light xl:shadow-none py-6 xl:py-2 xl:px-4 border-l-4 border-transparent hover:bg-gray-700 hover:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="h-6 w-6 text-grey-darker fill-current xl:mr-2"><path d="M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm9 11a1 1 0 0 1-2 0v-2a3 3 0 0 0-3-3H8a3 3 0 0 0-3 3v2a1 1 0 0 1-2 0v-2a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v2z" class="heroicon-ui"></path></svg>
-                <div class="text-xs">Admin</div>
-              </div>
-                <div  @click.stop v-show="isHidden" class="absolute xl:relative pin-t left-full xl:pin-none w-48 xl:w-auto group-hover:block bg-gray-800 z-50 xl:z-auto">
-                    <nuxt-link to="/admin/user/list" class="block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white hover:bg-gray-900 text-xs">
-                      Utilisateurs
-                    </nuxt-link>
-                    <nuxt-link to="/admin/formation/formations" class="block text-left xl:flex xl:items-center shadow xl:shadow-none py-3 px-3 xl:px-4 border-l-4 border-transparent text-white hover:bg-gray-900 text-xs">
-                      Gestion Formations
-                    </nuxt-link>
-                </div>
-            </div>
-          </div>
-        </div>
+
+</div>
   </aside>
 </template>
 
@@ -46,12 +53,18 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style lang="scss">
 
 #main {
   display: grid;
   grid-template-columns: 6rem auto;
 }
+
+ul li div{
+  cursor: pointer;
+}
+
+
 
 @media (min-width: 1200px) { 
   
@@ -60,7 +73,12 @@ export default Vue.extend({
 
 .nuxt-link-exact-active:not(.logo){
   background-color: #4a5568;
-  color: white;
+  &.child_side{
+    background-color: #1a202c;
+  }
+  & > *{
+    color: white;
+  }
 }
 
 a {
@@ -78,9 +96,31 @@ a {
 
 @media (min-width: 1200px) {
   .xl\:pin-none { left: auto; }
+
+}
+
+.group:hover{
+  background-color: #4a5568;
 }
 
 .group:hover .group-hover\:block {
   display: block;
+}
+
+
+
+@media only screen and (max-width: 764px){
+  .children_side{
+    position: absolute;
+    top: -84px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 399px){
+  .children_side{
+    top: -102px;
+    width: initial;
+  }
 }
 </style>

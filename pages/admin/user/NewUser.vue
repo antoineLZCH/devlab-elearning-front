@@ -46,6 +46,7 @@
         mot de passe
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************">
+    <p v-if="isError">jiofjioer</p>
     </div>
   </div>
   <div class="flex flex-wrap -mx-3 mb-2">
@@ -69,15 +70,24 @@
       <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="75010">
     </div>
   </div>
-  <button class="mainbutton" type="button">
-   Ajouter
-  </button>
+  <input type="submit" class="mainbutton" value="Ajouter">
 </form>
 </section>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
+import IUser from '@/../../interfaces/IUser';
+
+export default Vue.extend({
+  data(){
+    return {
+      email: '',
+      password: '',
+      isError: false
+    }
+  }
+})
 
 </script>
 

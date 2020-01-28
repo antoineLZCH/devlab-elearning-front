@@ -5,23 +5,23 @@
   </div>
   <div class="filters">
     <nuxt-link class="Add-stylus" to="NewUser">New User</nuxt-link>
+    <!-- <select v-model="selectedValue" @change="onChange" class="appearance-none h-full rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+     </select> -->
     <section class="bg-indigo-dark h-50 p-2">
               <div class="container mx-auto">
                 <input v-model="search" class="w-full h-16 px-3 rounded focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg" type="search" placeholder="Search User...">
           </div>
       </section>
   </div>
+  <div class="scrollable">
   <table class="table">
     <thead>
-      <!-- <tr>
-        <th scope="col">Nom Prénom</th>
-        <th scope="col">Équipe</th>
-        <th scope="col">Niveau</th>
-        <th scope="col">Nombre de formations</th>
-        <th scope="col">Actions</th>
-      </tr> -->
       <tr>
-        <th scope="col" v-for="column in columns" :key="column">
+        <th v-for="column in columns" :key="column">
             <a href="#" @click="sortBy(column)">
               {{ column }}
             </a>
@@ -30,7 +30,8 @@
     </thead>
     <tbody>
       <tr v-for="users in userSearch" :key="users.id" >
-        <td><img src="" alt="">{{ users.first_name }}</td>
+        <td class="user_picture"><img src="../../../assets/img/avatar1.jpg" alt="user picture"></td>
+        <td>{{ users.first_name }}</td>
         <td>{{ users.team }}</td>
         <td>{{ users.level }}</td>
         <td>{{ users.formation_nbr }}</td>
@@ -38,8 +39,11 @@
       </tr>
     </tbody>
   </table>
+  </div>
+    <div class="search_result" v-if="userSearch.length === 0">Pas de résultat</div>
 
-    <div class="pagination_container"><jw-pagination :pageSize="5" :maxPages="5" :items="users" @changePage="onChangePage" :labels="customLabels"></jw-pagination></div>
+    <div class="rows_number">Affichage de {{ userSearch.length }} sur {{ users.length }} résultats</div>
+    <div :class="{ 'disabled' : userSearch.length === 0}" class="pagination_container"><jw-pagination :pageSize="selectedValue" :items="users" @changePage="onChangePage" :labels="customLabels"></jw-pagination></div>
    
   </section>
 </template>
@@ -57,13 +61,12 @@ const customLabels = {
     next: '>'
 };
 
-export default {
+export default Vue.extend({
     data() {
         return {
-          sortkey: 'name',
-          reverse: false,
-          columns: ['Nom Prénom', 'Équipe', 'Niveau', 'Nombre de formations', 'Actions'],
+          columns: ['','Nom Prénom', 'Équipe', 'Niveau', 'Nombre de formations', 'Actions'],
           search: '',
+          selectedValue: 5,
           customLabels,
           pageOfItems: [],
           users: [
@@ -86,23 +89,26 @@ export default {
         };
     },
     methods: {
-        onChangePage(pageOfItems) {
-            // update page of items
+        onChangePage(pageOfItems){
             this.pageOfItems = pageOfItems;
-        },
-        sortBy: function(sortKey) {
-          this.reverse = (this.sortKey == sortKey) ? ! this.reverse : false;
-          this.sortKey = sortKey;
-        }
+       },
+       sortBy: function(sortKey) {
+        this.reverse = (this.sortKey == sortKey) ? ! this.reverse : false;
+        this.sortKey = sortKey;
+       }
+      //  ,
+      //  onChange(selectedValue) {
+      //   this.selectedValue = selectedValue;
+      // }
     },
     computed: {
-    userSearch() {
+    userSearch(){
       return this.pageOfItems.filter(users => {
         return users.first_name.toLowerCase().includes(this.search.toLowerCase())
       })
     }
   }
-};
+});
 </script>
 
 <style lang="scss">
@@ -114,24 +120,26 @@ export default {
     font-weight: bold;
   }
 
-  button{
-    &.deletebutton{
+ 
+  .deletebutton{
       background-color: rgb(255, 86, 86);
       border-color:rgb(255, 86, 86);
       padding: 8px;
+      cursor: pointer;
       color: white;
       margin: 3px;
       border-radius: 10px;
     }
-    &.mainbutton{
+  .mainbutton{
       background-color: rgb(130, 211, 222);
       border-color:rgb(130, 211, 222);
+      cursor: pointer;
       padding: 8px;
       color: white;
       margin: 3px;
       border-radius: 10px;
-    }
   }
+
   
   table{
     width: 100%;
@@ -149,8 +157,27 @@ export default {
       }
       & td{
         text-align: center;
+        &.user_picture{
+          width: 5%;
+          & img{
+            border-radius: 10px;
+          }
+        }
       }
     }
+  }
+
+  .rows_number{
+    margin: 10px;
+    text-align: center;
+    opacity: 0.6;
+  }
+
+  .search_result{
+    text-align: center;
+    font-size: 18px;
+    color: rgb(255, 91, 91);
+    margin-bottom: 20px;
   }
   
   .pagination_container{
@@ -158,6 +185,9 @@ export default {
     margin: 10px;
     & .page-item.disabled{
       color: gray;
+    }
+    &.disabled{
+      display: none;
     }
     & .page-item.page-number.active{
       color: #ffffff;
@@ -181,5 +211,18 @@ export default {
       height: 40px;
       font-size: 18px;
     }
+  }
+
+  @media only screen and (max-width: 600px){
+    
+    .scrollable{
+      width: 100%;
+      overflow: scroll;
+      & table{
+        width: 1000px;
+      }
+    }
+
+
   }
 </style>
