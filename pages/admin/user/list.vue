@@ -5,12 +5,6 @@
   </div>
   <div class="filters">
     <nuxt-link class="Add-stylus" to="NewUser">New User</nuxt-link>
-    <!-- <select v-model="selectedValue" @change="onChange" class="appearance-none h-full rounded-l border block appearance-none w-full bg-white border-gray-400 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-     </select> -->
     <section class="bg-indigo-dark h-50 p-2">
               <div class="container mx-auto">
                 <input v-model="search" class="w-full h-16 px-3 rounded focus:outline-none focus:shadow-outline text-xl px-8 shadow-lg" type="search" placeholder="Search User...">
@@ -22,9 +16,7 @@
     <thead>
       <tr>
         <th v-for="column in columns" :key="column">
-            <a href="#" @click="sortBy(column)">
               {{ column }}
-            </a>
         </th>
       </tr>
     </thead>
@@ -35,7 +27,7 @@
         <td>{{ users.team }}</td>
         <td>{{ users.level }}</td>
         <td>{{ users.formation_nbr }}</td>
-        <td><button class="mainbutton">Edit</button> | <button class="deletebutton">Delete</button></td>
+        <td><nuxt-link :to="'edit/'+users.id" class="mainbutton">Edit</nuxt-link> | <button class="deletebutton">Delete</button></td>
       </tr>
     </tbody>
   </table>
@@ -44,7 +36,7 @@
 
     <div class="rows_number">Affichage de {{ userSearch.length }} sur {{ users.length }} résultats</div>
     <div :class="{ 'disabled' : userSearch.length === 0}" class="pagination_container"><jw-pagination :pageSize="selectedValue" :items="users" @changePage="onChangePage" :labels="customLabels"></jw-pagination></div>
-   
+  
   </section>
 </template>
 
@@ -90,16 +82,8 @@ export default Vue.extend({
     },
     methods: {
         onChangePage(pageOfItems){
-            this.pageOfItems = pageOfItems;
-       },
-       sortBy: function(sortKey) {
-        this.reverse = (this.sortKey == sortKey) ? ! this.reverse : false;
-        this.sortKey = sortKey;
+          this.pageOfItems = pageOfItems;
        }
-      //  ,
-      //  onChange(selectedValue) {
-      //   this.selectedValue = selectedValue;
-      // }
     },
     computed: {
     userSearch(){
@@ -154,6 +138,9 @@ export default Vue.extend({
       & td:last-child { border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
       &:hover{
         background-color: rgb(130, 211, 222);
+      }
+      &:nth-child(odd){
+          background-color: rgb(236, 245, 248);
       }
       & td{
         text-align: center;

@@ -1,7 +1,7 @@
 <template>
 <section>
     <div class="head">
-    <h1><nuxt-link  to="formations">Retour</nuxt-link> |  Modifier une formation</h1>
+    <h1><nuxt-link  to="../formations">Retour</nuxt-link> |  Modifier une formation</h1>
   </div>
     <form class="w-full max-w-lg">
   <div class="flex flex-wrap -mx-3 mb-6">

@@ -27,14 +27,14 @@
         <td>{{ formations.formation_name }}</td>
         <td>{{ formations.level }}</td>
         <td>{{ formations.chapter_nbr }}</td>
-        <td><button class="mainbutton">Edit</button> | <button class="deletebutton">Delete</button></td>
+        <td><nuxt-link :to="'edit/'+formations.id" class="mainbutton">Edit</nuxt-link> | <button class="deletebutton">Delete</button></td>
       </tr>
     </tbody>
   </table>
   </div>
+
     <div class="search_result" v-if="formationSearch.length === 0">Pas de résultat</div>
-
-
+    <div class="rows_number">Affichage de {{ formationSearch.length }} sur {{ formationSearch.length }} résultats</div>
     <div :class="{ 'disabled' : formationSearch.length === 0}" class="pagination_container"><jw-pagination :pageSize="5" :maxPages="5" :items="formations" @changePage="onChangePage" :labels="customLabels"></jw-pagination></div>
    
   </section>
@@ -178,5 +178,10 @@ export default {
       height: 40px;
       font-size: 18px;
     }
+  }
+  .rows_number{
+    margin: 10px;
+    text-align: center;
+    opacity: 0.6;
   }
 </style>
